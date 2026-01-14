@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { encode, decode } from "gpt-tokenizer";
-
+import { Analytics } from "@vercel/analytics/react"
 const MODELS = [
   "gpt-4o",
   "gpt-4-turbo",
@@ -54,6 +54,7 @@ const Token = () => {
           <h2 style={styles.title}>GPT Tokenizer</h2>
           <p style={styles.subtitle}>Client-side visualizer</p>
         </div>
+        <Analytics/>
 
         <div style={styles.statsRow}>
           <Stat label="Tokens" value={tokenData.ids.length} />
